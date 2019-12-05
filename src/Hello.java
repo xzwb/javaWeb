@@ -6,6 +6,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/*@WebServlet(
+        name = "hello",
+        urlPatterns = {"/Hello"},
+        loadOnStartup = 1
+)*/
 @WebServlet("/Hello")
 public class Hello extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -21,5 +26,7 @@ public class Hello extends HttpServlet {
         out.printf("<h1>hello！%s%n</h1>", name);
         out.println("</body>");
         out.println("</html>");
+        System.out.println(request.getContextPath());
+        System.out.println(request.getServletPath());
     }
 }
