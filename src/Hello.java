@@ -11,7 +11,10 @@ import java.io.PrintWriter;
         urlPatterns = {"/Hello"},
         loadOnStartup = 1
 )*/
-@WebServlet("/Hello")
+@WebServlet(
+        name = "Hello",
+        urlPatterns = {"/hello"}
+)
 public class Hello extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
