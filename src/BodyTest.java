@@ -23,6 +23,7 @@ public class BodyTest extends HttpServlet {
         out.print("</head>");
         out.print("<body>");
         out.print(bodyContent(request.getReader()));
+        out.print("hello world");
         out.print("</body>");
         out.print("</html>");
         System.out.println("hshsh");
