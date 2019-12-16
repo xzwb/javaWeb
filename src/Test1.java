@@ -30,7 +30,6 @@ public class Test1 extends HttpServlet {
         while ((input = reader.readLine()) != null) {
             requestBody.append(input).append("<br>");
         }
-        System.out.println(requestBody);
         return requestBody.toString();
     }
 }
