@@ -14,11 +14,15 @@ public class LoginTest extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 设置响应编码格式
         response.setContentType("text/html;charset=utf-8");
+        // 设置请求编码格式
+        request.setCharacterEncoding("utf-8");
         // 获取请求信息
         String uname = request.getParameter("uname");
+        // 修改请求乱码
+        /*uname = new String(uname.getBytes("iso8859-1"), "utf-8");*/
         String pwd = request.getParameter("pwd");
-        /*System.out.println(uname + ": " + pwd);*/
-        // 处理请求信息(数据库里找啦)
+        System.out.println(uname + ": " + pwd);
+        // 处理请求信息(数据库里找)
         // 获取业务层对象
         LoginService ls = new LoginServiceImpl();
         User u = ls.checkLoginService(uname, pwd);
